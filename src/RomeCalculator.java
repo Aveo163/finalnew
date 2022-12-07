@@ -14,35 +14,36 @@ public class RomeCalculator {
     };
 
     private static int getInt(String rom) {
-       for(int i=0;i<rome.length;i++){
-           if(rome[i].equals(rom)){
-               return i+1;
-           }
-       }
-        return 0;
+        for (int i = 0; i < rome.length; i++) {
+            if (rome[i].equals(rom)) {
+                Main.checkTen(i + 1);
+                return i + 1;
+            }
+        }
+        throw new RuntimeException();
     }
 
 
     public static String sum(String num1, String num2) {
-        int result = getInt(num1)+getInt(num2);
-        return rome[result-1];
+        int result = getInt(num1) + getInt(num2);
+        return rome[result - 1];
     }
 
 
     public static String min(String num1, String num2) {
-        int result = getInt(num1)-getInt(num2);
-        return rome[result-1];
+        int result = getInt(num1) - getInt(num2);
+        return rome[result - 1];
     }
 
 
     public static String div(String num1, String num2) {
-        int result = getInt(num1)/getInt(num2);
-        return rome[result-1];
+        int result = getInt(num1) / getInt(num2);
+        return rome[result - 1];
     }
 
 
     public static String mul(String num1, String num2) {
-        int result = getInt(num1)*getInt(num2);
-        return rome[result-1];
+        int result = getInt(num1) * getInt(num2);
+        return rome[result - 1];
     }
 }
